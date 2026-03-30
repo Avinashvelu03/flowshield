@@ -48,7 +48,7 @@ export function hedge(options: HedgeOptions = {}) {
       const doLaunchHedge = () => {
         hedgeLaunched = true;
         const hedgeRequest = fn();
-        hedgeRequest.then(trySettle, (_hedgeErr: unknown) => {
+        hedgeRequest.then(trySettle, () => {
           hedgeDone = true;
           if (!primaryDone && !settled) {
             return;
