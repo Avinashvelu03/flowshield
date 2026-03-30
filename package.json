@@ -1,0 +1,80 @@
+{
+  "name": "flowshield",
+  "version": "1.0.0",
+  "description": "Zero-dependency, TypeScript-first resilience & fault-tolerance toolkit. Composable policies: retry, circuit breaker, timeout, bulkhead, fallback, rate limiter, hedge, cache.",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:types": "tsc -p tsconfig.types.json",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs && npm run build:types",
+    "clean": "node -e \"const fs=require('fs');if(fs.existsSync('dist'))fs.rmSync('dist',{recursive:true})\"",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src/ --ext .ts",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "resilience",
+    "fault-tolerance",
+    "retry",
+    "circuit-breaker",
+    "timeout",
+    "bulkhead",
+    "fallback",
+    "rate-limiter",
+    "hedge",
+    "cache",
+    "typescript",
+    "zero-dependency",
+    "composable",
+    "microservices",
+    "error-handling",
+    "exponential-backoff",
+    "polly",
+    "cockatiel",
+    "fault-tolerant",
+    "resilient",
+    "policies",
+    "edge-runtime"
+  ],
+  "author": "Avinash Velu <avinashvelu03@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Avinashvelu03/flowshield.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Avinashvelu03/flowshield/issues"
+  },
+  "homepage": "https://github.com/Avinashvelu03/flowshield#readme",
+  "devDependencies": {
+    "@vitest/coverage-v8": "^3.1.1",
+    "eslint": "^8.57.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.1.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "sideEffects": false
+}
