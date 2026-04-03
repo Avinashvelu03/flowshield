@@ -270,3 +270,31 @@ try {
 ## 📄 License
 
 [MIT](./LICENSE) © [Avinash Velu](https://github.com/Avinashvelu03)
+
+---
+
+## 💖 Support FlowShield
+
+<div align="center">
+
+```
+ ┌─────────────────────────────────────────────────────────────┐
+ │                                                             │
+ │   FlowShield guards your async ops — 24/7, no breaks.     │
+ │   If it's saved you from a cascading failure at 3 AM,      │
+ │   consider buying the developer a coffee. ☕               │
+ │                                                             │
+ └─────────────────────────────────────────────────────────────┘
+```
+
+> *Open-source resilience infrastructure. Built alone. Maintained with care.*
+
+[![Ko-fi](https://img.shields.io/badge/☕_Ko--fi-Support_the_Build-FF5E5B?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/avinashvelu)
+[![GitHub Sponsors](https://img.shields.io/badge/💜_GitHub_Sponsors-Become_a_Sponsor-EA4AAA?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sponsors/Avinashvelu03)
+
+**Other ways to keep this shield standing:**
+- ⭐ Star [flowshield](https://github.com/Avinashvelu03/flowshield) — costs nothing, means everything
+- 🐛 File issues or request missing fault-tolerance patterns
+- 📢 Share FlowShield with your team or in your tech community
+
+</div>
