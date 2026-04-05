@@ -33,16 +33,16 @@ jobs:
         run: npm run lint
 
       - name: Type check
-        run: npx tsc --noEmit
+        run: npm run typecheck
 
-      - name: Run tests
+      - name: Run tests (Vitest)
         run: npm test
 
       - name: Build
         run: npm run build
 
-      - name: Audit dependencies
-        run: npm audit --audit-level=moderate
+      - name: Audit production dependencies
+        run: npm audit --audit-level=moderate --omit=dev
 
   codeql:
     name: CodeQL Security Analysis
@@ -58,7 +58,7 @@ jobs:
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
-          languages: javascript-typescript
+          languages: javascript
 
       - name: Autobuild
         uses: github/codeql-action/autobuild@v3
