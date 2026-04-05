@@ -17,7 +17,7 @@ const DEFAULTS = {
  * @example
  * ```ts
  * const cb = circuitBreaker({ failureThreshold: 3, resetTimeout: 10_000 });
- * const result = await cb.execute(() => fetch('/api/health'));
+  * const result = await cb.execute(() => callApi());
  * console.log(cb.handle.state); // 'closed'
  * ```
  */
