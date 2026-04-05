@@ -16,7 +16,7 @@ const DEFAULTS = {
  * @example
  * ```ts
  * const result = await retry({ maxAttempts: 5, backoff: 'exponential' })(
- *   () => fetch('/api/data'),
+ *   () => callApi(),
  * );
  * ```
  */
