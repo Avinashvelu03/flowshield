@@ -23,7 +23,7 @@ interface QueueEntry<T> {
  * @example
  * ```ts
  * const bh = bulkhead({ maxConcurrent: 5, maxQueue: 10 });
- * const result = await bh.execute(() => fetch('/api/data'));
+  * const result = await bh.execute(() => callApi());
  * console.log(bh.handle.running); // number of active calls
  * ```
  */
