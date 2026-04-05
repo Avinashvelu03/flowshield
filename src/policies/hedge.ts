@@ -12,9 +12,7 @@ const DEFAULTS = {
  *
  * @example
  * ```ts
- * const result = await hedge({ hedgeDelay: 1000 })(
- *   () => fetch('/api/data').then(r => r.json()),
- * );
+  * const result = await hedge({ hedgeDelay: 1000 })(() => callApi());
  * ```
  */
 export function hedge(options: HedgeOptions = {}) {
