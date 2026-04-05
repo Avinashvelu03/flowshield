@@ -22,7 +22,7 @@ interface CacheEntry<T> {
  * @example
  * ```ts
  * const c = cache({ ttl: 10_000 });
- * const result = await c.execute(() => fetch('/api/data').then(r => r.json()));
+ * const result = await c.execute(() => callApi());
  * ```
  */
 export function cache<V = unknown>(options: CacheOptions<V> = {}): {
