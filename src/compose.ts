@@ -12,7 +12,7 @@ import type { Policy } from './types.js';
  *   timeout({ ms: 5000 }),
  *   retry({ maxAttempts: 3 }),
  * );
- * const result = await resilient(() => fetch('/api'));
+ * const result = await resilient(() => callApi());
  * ```
  */
 export function pipe(...policies: Policy[]): Policy {
@@ -44,7 +44,7 @@ export function pipe(...policies: Policy[]): Policy {
  *   timeout({ ms: 5000 }),
  *   retry({ maxAttempts: 3 }),
  * );
- * const result = await policy(() => fetch('/api'));
+ * const result = await policy(() => callApi());
  * ```
  */
 export function wrap(outer: Policy, inner: Policy): Policy {
