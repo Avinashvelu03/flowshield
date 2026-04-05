@@ -6,9 +6,7 @@ import type { FallbackOptions } from '../types.js';
  *
  * @example
  * ```ts
- * const result = await fallback({ fallback: [] })(
- *   () => fetch('/api/items').then(r => r.json()),
- * );
+  * const result = await fallback({ fallback: [] })(() => callApi());
  * ```
  */
 export function fallback<F>(options: FallbackOptions<F>) {
