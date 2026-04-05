@@ -22,9 +22,9 @@ describe('timeout', () => {
   it('should throw TimeoutError if operation exceeds deadline', async () => {
     const fn = () => new Promise<string>((resolve) => setTimeout(() => resolve('ok'), 5000));
     const promise = timeout({ ms: 100 })(fn);
+    const assertion = expect(promise).rejects.toThrow(TimeoutError);
     await vi.advanceTimersByTimeAsync(101);
-
-    await expect(promise).rejects.toThrow(TimeoutError);
+    await assertion;
   });
 
   it('should propagate errors from the wrapped function', async () => {
@@ -63,9 +63,9 @@ describe('timeout', () => {
     let resolver: (v: string) => void;
     const fn = () => new Promise<string>((resolve) => { resolver = resolve; });
     const promise = timeout({ ms: 50 })(fn);
+    const assertion = expect(promise).rejects.toThrow(TimeoutError);
     await vi.advanceTimersByTimeAsync(60);
-
-    await expect(promise).rejects.toThrow(TimeoutError);
+    await assertion;
 
     // Late resolve should be silently ignored
     resolver!('late');
@@ -75,8 +75,8 @@ describe('timeout', () => {
     // Inner promise never resolves or rejects
     const fn = () => new Promise<string>(() => {/* never settles */});
     const promise = timeout({ ms: 50 })(fn);
+    const assertion = expect(promise).rejects.toThrow(TimeoutError);
     await vi.advanceTimersByTimeAsync(60);
-
-    await expect(promise).rejects.toThrow(TimeoutError);
+    await assertion;
   });
 });

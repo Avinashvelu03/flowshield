@@ -86,10 +86,11 @@ describe('bulkhead', () => {
 
     const p1 = bh.execute(blocker);
     const p2 = bh.execute(failing);
+    const assertion = expect(p2).rejects.toThrow('queued fail');
 
     await vi.advanceTimersByTimeAsync(100);
     await p1;
-    await expect(p2).rejects.toThrow('queued fail');
+    await assertion;
     vi.useRealTimers();
   });
 
