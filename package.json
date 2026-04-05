@@ -1,6 +1,6 @@
 {
   "name": "flowshield",
-    "version": "1.0.4.0.3",
+        "version": "1.0.4",
   "type": "module",
   "description": "Zero-dependency, TypeScript-first resilience & fault-tolerance toolkit. Composable policies: retry, circuit breaker, timeout, bulkhead, fallback, rate limiter, hedge, cache.",
   "main": "./dist/cjs/index.js",
