@@ -11,7 +11,7 @@ import { assertPositive } from '../utils.js';
  *
  * @example
  * ```ts
- * const result = await timeout({ ms: 5000 })(() => fetch('/api/data'));
+  * const result = await timeout({ ms: 5000 })(() => callApi());
  * ```
  */
 export function timeout(options: TimeoutOptions) {
