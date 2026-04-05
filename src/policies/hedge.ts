@@ -48,28 +48,36 @@ export function hedge(options: HedgeOptions = {}) {
       const doLaunchHedge = () => {
         hedgeLaunched = true;
         const hedgeRequest = fn();
-        hedgeRequest.then(trySettle, () => {
-          hedgeDone = true;
-          if (!primaryDone && !settled) {
-            return;
-          }
-          tryRejectBoth();
-        });
+        // Use void to explicitly discard the promise and prevent unhandled rejection
+        void hedgeRequest.then(
+          (value) => trySettle(value),
+          () => {
+            hedgeDone = true;
+            if (!primaryDone && !settled) {
+              return;
+            }
+            tryRejectBoth();
+          },
+        );
       };
 
       // Primary request
       const primary = fn();
-      primary.then(trySettle, (err: unknown) => {
-        primaryDone = true;
-        primaryError = err;
+      // Use void to explicitly discard the promise and prevent unhandled rejection
+      void primary.then(
+        (value) => trySettle(value),
+        (err: unknown) => {
+          primaryDone = true;
+          primaryError = err;
 
-        if (!hedgeLaunched) {
-          clearTimeout(hedgeTimer);
-          doLaunchHedge();
-        }
+          if (!hedgeLaunched) {
+            clearTimeout(hedgeTimer);
+            doLaunchHedge();
+          }
 
-        tryRejectBoth();
-      });
+          tryRejectBoth();
+        },
+      );
 
       // Schedule hedged request
       const hedgeTimer = setTimeout(() => {
