@@ -22,7 +22,7 @@ interface Waiter {
  * @example
  * ```ts
  * const rl = rateLimiter({ tokensPerInterval: 5, interval: 1000 });
- * const result = await rl.execute(() => fetch('/api/data'));
+  * const result = await rl.execute(() => callApi());
  * ```
  */
 export function rateLimiter(options: RateLimiterOptions = {}): {
