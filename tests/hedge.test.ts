@@ -67,9 +67,9 @@ describe('hedge', () => {
     const fn = vi.fn().mockRejectedValue(new Error('both-fail'));
 
     const promise = hedge({ hedgeDelay: 100 })(fn);
+    const assertion = expect(promise).rejects.toThrow('both-fail');
     await vi.advanceTimersByTimeAsync(200);
-
-    await expect(promise).rejects.toThrow('both-fail');
+    await assertion;
   });
 
   it('should use default hedgeDelay', async () => {
@@ -138,8 +138,8 @@ describe('hedge', () => {
     });
 
     const promise = hedge({ hedgeDelay: 100 })(fn);
+    const assertion = expect(promise).rejects.toThrow('primary-fail');
     await vi.advanceTimersByTimeAsync(500);
-
-    await expect(promise).rejects.toThrow('primary-fail');
+    await assertion;
   });
 });
