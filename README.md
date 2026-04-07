@@ -1,12 +1,15 @@
 # FlowShield
 
-> **Zero-dependency, TypeScript-first resilience & fault-tolerance toolkit.**
+<p align="center">
+  <img src="https://img.shields.io/npm/v/flowshield?style=flat-square&color=blue" alt="npm version" />
+  <img src="https://img.shields.io/badge/coverage-100%25-brightgreen?style=flat-square" alt="coverage" />
+  <img src="https://img.shields.io/npm/l/flowshield?style=flat-square" alt="license" />
+  <img src="https://img.shields.io/badge/dependencies-0-brightgreen?style=flat-square" alt="zero deps" />
+  <img src="https://img.shields.io/badge/TypeScript-first-blue?style=flat-square&logo=typescript&logoColor=white" alt="typescript" />
+  <img src="https://img.shields.io/npm/dm/flowshield?style=flat-square" alt="downloads" />
+</p>
 
-[![npm version](https://img.shields.io/npm/v/flowshield.svg)](https://www.npmjs.com/package/flowshield)
-[![npm downloads](https://img.shields.io/npm/dm/flowshield.svg)](https://www.npmjs.com/package/flowshield)
-[![license](https://img.shields.io/npm/l/flowshield.svg)](https://github.com/Avinashvelu03/flowshield/blob/main/LICENSE)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7+-blue.svg)](https://www.typescriptlang.org/)
-[![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)](https://github.com/Avinashvelu03/flowshield)
+> **Zero-dependency, TypeScript-first resilience & fault-tolerance toolkit.**
 
 Composable fault-tolerance policies for any async operation. Ship resilient microservices, API clients, and distributed systems with **retry**, **circuit breaker**, **timeout**, **bulkhead**, **fallback**, **rate limiter**, **hedge**, and **cache** — all in a lightweight, tree-shakable package.
 
@@ -278,13 +281,13 @@ try {
 <div align="center">
 
 ```
- ┌─────────────────────────────────────────────────────────────┐
+ ┌───────────────────────────────────────────────────────────────┐
  │                                                             │
  │   FlowShield guards your async ops — 24/7, no breaks.     │
  │   If it's saved you from a cascading failure at 3 AM,      │
  │   consider buying the developer a coffee. ☕               │
  │                                                             │
- └─────────────────────────────────────────────────────────────┘
+ └───────────────────────────────────────────────────────────────┘
 ```
 
 > *Open-source resilience infrastructure. Built alone. Maintained with care.*
